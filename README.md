@@ -28,6 +28,8 @@ It supports full CRUD operations with search, filter, pagination, and validation
 ---
 
 ## 📂 Project Structure
+
+task-management-portal/
 │
 ├── backend/
 ├── frontend/
@@ -35,18 +37,57 @@ It supports full CRUD operations with search, filter, pagination, and validation
 ├── screenshots/
 ├── Task-Management-API.postman_collection.json
 
-
 ---
 
 ## ⚙️ Setup Instructions
 
 ### Backend
 
-```bash
-cd backend
-npm install
-npm run dev
+cd backend  
+npm install  
+npm run dev  
 
 Create .env file:
-PORT=3001
-DATABASE_URL=your_postgres_connection_string
+
+PORT=3001  
+DATABASE_URL=your_postgres_connection_string  
+
+---
+
+### Frontend
+
+cd frontend  
+npm install  
+npm run dev  
+
+---
+
+## 📡 API Endpoints
+
+- GET /api/tasks
+- GET /api/tasks/:id
+- POST /api/tasks
+- PUT /api/tasks/:id
+- DELETE /api/tasks/:id
+
+---
+
+## 🧪 Database Schema
+
+CREATE TABLE tasks (
+    id SERIAL PRIMARY KEY,
+    title VARCHAR(150) NOT NULL,
+    description TEXT NOT NULL,
+    status VARCHAR(20) DEFAULT 'Pending',
+    priority VARCHAR(20) DEFAULT 'Medium',
+    due_date DATE,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+---
+
+
+## 👨‍💻 Author
+
+Mayur Khairkar
